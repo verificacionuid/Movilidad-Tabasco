@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gafete Válido Registrado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&display=swap');
+
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background-color: #e5e7eb; /* Fondo suave para resaltar la tarjeta */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* */
+        /* Contenedor del trasfondo del gafete */
+        .card-bg-layer {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            /* RUTA DE TU IMAGEN DE TRASFONDO */
+            background-image: url('fondo_movilidad.png'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        /* Patrón de marca de agua en texto por si no carga la imagen de fondo */
+        .watermark-fallback {
+            background-color: #fdfcfc;
+            background-image: repeating-linear-gradient(
+                -35deg,
+                rgba(139, 0, 0, 0.04),
+                rgba(139, 0, 0, 0.04) 15px,
+                transparent 15px,
+                transparent 40px
+            );
+        }
+
+        @media print {
+            body {
+                background-color: white !important;
+            }
+            .card-container {
+                box-shadow: none !important;
+                border: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="p-2 sm:p-6">
+
+    <!-- CONTENEDOR PRINCIPAL DEL GAFETE (CENTRADO EN PANTALLA) -->
+    <main class="card-container w-full max-w-[390px] min-h-[670px] bg-white rounded-xl shadow-2xl overflow-hidden flex flex-col relative border border-gray-300 select-none my-auto">
+        
+        <!-- Barra Vinotinto Superior -->
+        <div class="w-full h-10 bg-[#6b1434] z-10 shrink-0 shadow-sm"></div>
+
+        <!-- Cuerpo de la Tarjeta -->
+        <div class="flex-1 p-5 pt-6 flex flex-col justify-start relative overflow-hidden">
+            
+            <!-- TRASFONDO PERSONALIZADO DEL GAFETE -->
+            <div class="card-bg-layer watermark-fallback"></div>
+
+            <!-- Contenido Frontal del Gafete -->
+            <div class="relative z-10 flex flex-col items-center h-full">
+
+                <!-- Título Principal -->
+                <div class="text-center mb-6">
+                    <h1 class="text-[26px] leading-tight font-black tracking-tight text-[#222222] uppercase font-sans">
+                        GAFETE VALIDO<br>REGISTRADO
+                    </h1>
+                </div>
+
+                <!-- Rejilla de 2 Columnas (Datos a la izquierda - Foto a la derecha) -->
+                <div class="w-full grid grid-cols-12 gap-3 items-start my-auto">
+                    
+                    <!-- Columna Izquierda: Información del Chofer -->
+                    <div class="col-span-6 flex flex-col space-y-4 pr-1">
+                        
+                        <!-- Nombre -->
+                        <div>
+                            <span class="block text-[11px] font-bold text-gray-600 uppercase tracking-wider mb-0.5">NOMBRE:</span>
+                            <p class="text-[15px] font-black leading-tight text-[#111111] uppercase tracking-tight">
+                                WILBERT<br>SANCHEZ<br>LOPEZ
+                            </p>
+                        </div>
+
+                        <!-- Número de Gafete -->
+                        <div class="bg-white/85 backdrop-blur-sm p-2 rounded-lg border border-gray-200/80 shadow-sm">
+                            <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-tight">No. DE GAFETE:</span>
+                            <p class="text-[13px] font-extrabold text-[#111111] mt-0.5 uppercase tracking-tighter">
+                                SM-GAE 26615-26
+                            </p>
+                        </div>
+
+                        <!-- Vigencia -->
+                        <div class="py-0.5">
+                            <span class="block text-[12px] font-bold text-[#8b0000] uppercase tracking-wide">VIGENCIA:</span>
+                            <p class="text-[13px] font-black text-[#8b0000] leading-tight uppercase">
+                                03-<br>MARZO-<br>2028
+                            </p>
+                        </div>
+
+                        <!-- Tipo de Gafete -->
+                        <div class="bg-white/85 backdrop-blur-sm p-2 rounded-lg border border-gray-200/80 shadow-sm">
+                            <span class="block text-[10px] font-bold text-gray-500 uppercase tracking-tight">TIPO DE GAFETE:</span>
+                            <p class="text-[12px] font-extrabold text-[#111111] mt-0.5 uppercase leading-tight">
+                                PASAJEROS
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Columna Derecha: Foto de Perfil -->
+                    <div class="col-span-6 flex justify-center pl-1">
+                        <div class="w-full aspect-[3/4] border-[2px] border-[#e86b6b] rounded-sm overflow-hidden bg-white shadow-md relative">
+                            <!-- RUTA DE TU FOTO DE PERFIL -->
+                            <img src="foto_perfil.jpg" 
+                                 alt="Foto del Titular" 
+                                 class="w-full h-full object-cover object-top"
+                                 onerror="this.src='https://via.placeholder.com/300x400/f1f5f9/64748b?text=foto_perfil.jpg'">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+</body>
+</html>
