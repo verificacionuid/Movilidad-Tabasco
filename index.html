@@ -3,54 +3,38 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gafete Valido Registrado</title>
+  <title>Gafete</title>
   <style>
-    /* Estilos globales y contenedor principal */
-    body {
+    * {
       margin: 0;
       padding: 0;
-      background-color: #f4f4f4;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #f4f4f4; /* Color de fondo claro */
       min-height: 100vh;
-      font-family: sans-serif;
+      display: flex;
+      justify-content: center; /* Centra horizontalmente */
+      align-items: center;     /* Centra verticalmente */
+      padding: 15px;
     }
 
-    .gafete-container {
-      position: relative;
-      width: 100%;
-      max-width: 400px; /* Ajusta según el ancho de la plantilla en pantalla */
-    }
-
-    /* Imagen de la plantilla completa */
-    .plantilla-img {
-      width: 100%;
+    .imagen-centrada {
+      max-width: 100%;
+      max-height: 95vh;
+      width: auto;
       height: auto;
       display: block;
-    }
-
-    /* Posicionamiento exacto sobre el cuadro rojo */
-    .foto-overlay {
-      position: absolute;
-      top: 27.2%;     /* Posición vertical relativa */
-      left: 50.2%;    /* Posición horizontal relativa */
-      width: 37.8%;   /* Ancho del recuadro rojo */
-      height: 34.5%;  /* Alto del recuadro rojo */
-      object-fit: cover; /* Ajusta la foto sin deformarla */
-      border-radius: 2px;
+      border-radius: 8px; /* Bordes suavemente redondeados */
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15); /* Sombra ligera */
     }
   </style>
 </head>
 <body>
 
-  <div class="gafete-container">
-    <!-- Imagen del gafete base sin foto -->
-    <img src="plantilla_gafete.png" alt="Gafete" class="plantilla-img">
-    
-    <!-- Tu foto pegada exactamente sobre el cuadro blanco -->
-    <img src="mi_foto.jpg" alt="Foto de perfil" class="foto-overlay">
-  </div>
+  <!-- Aquí pones el nombre de la imagen que subiste a GitHub -->
+  <img src="mi_gafete.png" alt="Gafete" class="imagen-centrada">
 
 </body>
 </html>
